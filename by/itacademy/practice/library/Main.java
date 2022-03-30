@@ -6,46 +6,47 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		Library scienceLibrary = new Library("Научная библиотека");
+		Library scienceLibrary = new Library("РќР°СѓС‡РЅР°СЏ Р±РёР±Р»РёРѕС‚РµРєР°");
 
 		scienceLibrary.addBookToLibrary(
-				new Book(2586, "Философия JAVA", "Б.Эккель", "Питер", 2022, 1168, 30, "твердый переплет"));
-		scienceLibrary.addBookToLibrary(new Book(4875, "Head First. Паттерны проектирования", "К.Сьерра", "Питер", 2021,
-				640, 23, "мягкий переплет"));
+				new Book(2586, "Р¤РёР»РѕСЃРѕС„РёСЏ JAVA", "Р‘.Р­РєРєРµР»СЊ", "РџРёС‚РµСЂ", 2022, 1168, 30, "С‚РІРµСЂРґС‹Р№ РїРµСЂРµРїР»РµС‚"));
+		scienceLibrary.addBookToLibrary(new Book(4875, "Head First. РџР°С‚С‚РµСЂРЅС‹ РїСЂРѕРµРєС‚РёСЂРѕРІР°РЅРёСЏ", "Рљ.РЎСЊРµСЂСЂР°", "РџРёС‚РµСЂ", 2021,
+				640, 23, "РјСЏРіРєРёР№ РїРµСЂРµРїР»РµС‚"));
 		scienceLibrary.addBookToLibrary(
-				new Book(2563, "Код.Тайный язык информатики", "Ч.Петцольд", "МИФ", 2019, 2000, 13, "мягкий переплет"));
+				new Book(2563, "РљРѕРґ.РўР°Р№РЅС‹Р№ СЏР·С‹Рє РёРЅС„РѕСЂРјР°С‚РёРєРё", "Р§.РџРµС‚С†РѕР»СЊРґ", "РњРР¤", 2019, 2000, 13, "РјСЏРіРєРёР№ РїРµСЂРµРїР»РµС‚"));
 		scienceLibrary.addBookToLibrary(
-				new Book(6412, "Изучаем JAVA", "К.Сьерра", "ЭКСМО", 2012, 718, 35, "мягкий переплет"));
+				new Book(6412, "РР·СѓС‡Р°РµРј JAVA", "Рљ.РЎСЊРµСЂСЂР°", "Р­РљРЎРњРћ", 2012, 718, 35, "РјСЏРіРєРёР№ РїРµСЂРµРїР»РµС‚"));
 
 		Scanner sc = new Scanner(System.in);
 
-		// a) список книг заданного автора;
-		System.out.println("Выберите автора:");
+		// a) СЃРїРёСЃРѕРє РєРЅРёРі Р·Р°РґР°РЅРЅРѕРіРѕ Р°РІС‚РѕСЂР°;
+		System.out.println("Р’С‹Р±РµСЂРёС‚Рµ Р°РІС‚РѕСЂР°:");
 		List<String> authors = scienceLibrary.listOfAuthors(scienceLibrary);
 		scienceLibrary.printList(authors);
 		System.out.print(">> ");
 		int authorNumber = sc.nextInt();
-		System.out.println("Книги автора " + authors.get(authorNumber - 1) + ":");
+		System.out.println("РљРЅРёРіРё Р°РІС‚РѕСЂР° " + authors.get(authorNumber - 1) + ":");
 		scienceLibrary.printBooksOfChoosedAuthor(authors.get(authorNumber - 1));
 		
 		
-		// b) список книг, выпущенных заданным издательством;
-		System.out.println("\nВыберите издательство:");
+		// b) СЃРїРёСЃРѕРє РєРЅРёРі, РІС‹РїСѓС‰РµРЅРЅС‹С… Р·Р°РґР°РЅРЅС‹Рј РёР·РґР°С‚РµР»СЊСЃС‚РІРѕРј;
+		System.out.println("\nР’С‹Р±РµСЂРёС‚Рµ РёР·РґР°С‚РµР»СЊСЃС‚РІРѕ:");
 		List<String> publishingHouse = scienceLibrary.listOfPublishingHouse(scienceLibrary);
 		scienceLibrary.printList(publishingHouse);
 		System.out.print(">> ");
 		int publishingHouseNumber = sc.nextInt();
-		System.out.println("Книги издательства " + publishingHouse.get(publishingHouseNumber-1) + ":");
+		System.out.println("РљРЅРёРіРё РёР·РґР°С‚РµР»СЊСЃС‚РІР° " + publishingHouse.get(publishingHouseNumber-1) + ":");
 		scienceLibrary.printBooksOfChoosedPublishingHouse(publishingHouse.get(publishingHouseNumber-1));
 		
-		//c) список книг, выпущенных после заданного года.
-		System.out.println("\nВведите год издания:");
+		//c) СЃРїРёСЃРѕРє РєРЅРёРі, РІС‹РїСѓС‰РµРЅРЅС‹С… РїРѕСЃР»Рµ Р·Р°РґР°РЅРЅРѕРіРѕ РіРѕРґР°.
+		System.out.println("\nР’РІРµРґРёС‚Рµ РіРѕРґ РёР·РґР°РЅРёСЏ:");
 		System.out.print(">> ");
 		int earliestYearOfPublishing = sc.nextInt();
-		System.out.println("Книги изданные позже " + earliestYearOfPublishing + " года:");
+		System.out.println("РљРЅРёРіРё РёР·РґР°РЅРЅС‹Рµ РїРѕР·Р¶Рµ " + earliestYearOfPublishing + " РіРѕРґР°:");
 		scienceLibrary.printBooksPublishedAfterEnteredYear(earliestYearOfPublishing);
 		
 		sc.close();
 	}
 
 }
+
